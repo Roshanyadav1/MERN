@@ -1,9 +1,10 @@
 "use client";
+import { registerUser } from "@/services/main";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { loginUser } from "@/services/main";
 
 type Inputs = {
+  userName: string;
   email: string;
   password: string;
 };
@@ -16,18 +17,28 @@ const Login = () => {
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async data => {
-    console.log("data is " ,data)
-    const res = await loginUser(data);
+    const res = await registerUser(data);
 
+    console.log(res);
   };
-
   return (
     <div className="w-screen h-screen grid place-items-center">
       <div className="card w-96 bg-neutral text-neutral-content">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="card-body text-center">
-            <h2 className="font-bold text-2xl">Login</h2>
-            <p>Good to see you !</p>
+            <h2 className="font-bold text-2xl">Register</h2>
+            <p>Hello , nice to meet you</p>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              {...register("userName", { required: true })}
+              className="input input-bordered input-md w-full max-w-xs my-1.5"
+            />
+            {errors.userName && (
+              <span className="text-red-600 text-start -mt-2">
+                Name is required !
+              </span>
+            )}
             <input
               type="text"
               placeholder="Enter your email"
@@ -52,13 +63,13 @@ const Login = () => {
             )}
             <div className="card-actions m-auto justify-end">
               <button type="submit" className="btn">
-                Login
+                Register
               </button>
             </div>
             <p>
               Don't have an account ?
-              <Link href="/signin" legacyBehavior>
-                <a className="link link-hover"> Register </a>
+              <Link href="/login" legacyBehavior>
+                <a className="link link-hover"> Log in </a>
               </Link>
             </p>
           </div>
