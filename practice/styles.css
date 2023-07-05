@@ -14,8 +14,19 @@ h1::first-line {
     color: green;
 }
 
+h3::before {
+    content: "Hello !";
+}
+
+h3::after {
+    content: ' Greetings !';
+}
+
+
+
 /* practice of Pseudo elements  */
 div>p::first-letter {
+    background-color: white;
     color: red;
     font-size: 32px;
 }
@@ -67,7 +78,7 @@ div p:first-child {
 .tip {
     display: none;
     font-weight: bold;
-    color: white;
+    color: rgb(255, 14, 14);
 }
 
 .tool:hover .tip {
@@ -81,6 +92,22 @@ div p:first-child {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 4px;
+}
+
+
+/* first and last child pseudo practice  */
+
+div p:first-child {
+    background-color: darkgreen;
+}
+
+div p:nth-child(2) {
+    background-color: darkcyan;
+}
+
+div div:nth-child(2n +1) {
+    background-color: gray;
+    padding: 10px;
 }
 
 
@@ -111,7 +138,7 @@ div p:first-child {
 /* grid practice   */
 .grid2 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
 }
 
 
@@ -130,7 +157,7 @@ div p:first-child {
     }
 }
 
-
-
-
- 
+::selection {
+    background-color: lightcoral;
+    color: black;
+}
