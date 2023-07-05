@@ -58,8 +58,10 @@ div p:first-child {
 
 /* now we will se how to make tooltip for the webpage  */
 .tool {
+    color: black;
+    font-weight: bold;
     margin-top: 10px;
-    background-color: lightblue;
+    background-color: lightcoral;
 }
 
 .tip {
@@ -72,10 +74,63 @@ div p:first-child {
     display: block;
     position: absolute;
     display: inline-block;
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    background: rgba(51, 143, 201, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 4px;
 }
+
+
+/* grid practice   */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* grid practice with media query */
+
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+/* grid practice   */
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* grid practice with media query with min-width */
+
+
+@media only screen and (min-width: 600px) {
+    .grid2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .grid2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+
+
+ 
