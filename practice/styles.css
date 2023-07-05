@@ -1,0 +1,81 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* practice of Pseudo classess  */
+
+h1::first-letter {
+    color: red;
+    font-size: 50px;
+}
+
+h1::first-line {
+    color: green;
+}
+
+/* practice of Pseudo elements  */
+div>p::first-letter {
+    color: red;
+    font-size: 32px;
+}
+
+div>p::first-line {
+    color: darkblue;
+}
+
+div p:first-child {
+    background-color: darkcyan;
+}
+
+/* practice of Pseudo elements  */
+
+/* when the link is not visited */
+.primary-btn:link {
+    padding: 10px;
+    background-color: red;
+}
+
+/* when we already visited the link */
+.primary-btn:visited {
+    color: rgb(3, 0, 0);
+    font-weight: 10px;
+}
+
+/* when we click on the button */
+.primary-btn:active {
+    color: rgb(0, 0, 0);
+    border: 2px solid red;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* on hover effect */
+.primary-btn:hover {
+    background-color: violet;
+    color: white;
+}
+
+/* now we will se how to make tooltip for the webpage  */
+.tool {
+    margin-top: 10px;
+    background-color: lightblue;
+}
+
+.tip {
+    display: none;
+    font-weight: bold;
+    color: white;
+}
+
+.tool:hover .tip {
+    display: block;
+    position: absolute;
+    display: inline-block;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 4px;
+}
