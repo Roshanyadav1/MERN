@@ -8,17 +8,17 @@ const Container = styled.div`
   border-radius: 2px;
 `;
 
- 
-
-const Task = ({ key , task }) => {
-  return (<Container key={key}>{task.content}</Container>)
+// eslint-disable-next-line react/prop-types
+const Task = ({ key ,task }) => {
+  console.log(task , key, "is this working the task are");
+  return <Container>{task.content}</Container>;
 };
 
 Task.propTypes = {
   task: PropTypes.shape({
+    key: PropTypes.string,
     content: PropTypes.string,
   }),
-  key: PropTypes.string || PropTypes.any, 
 };
 
 export default Task;
