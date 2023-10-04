@@ -16,11 +16,12 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = async data => {
+  const onSubmit: SubmitHandler<Inputs> = async (data: any) => {
     const res = await registerUser(data);
 
     console.log(res);
   };
+  
   return (
     <div className="w-screen h-screen grid place-items-center">
       <div className="card w-96 bg-neutral text-neutral-content">
